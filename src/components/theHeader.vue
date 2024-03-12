@@ -4,7 +4,10 @@
       <router-link to="/" class="logo">
         <img src="@/assets/ranek.svg" alt="Ranek">
       </router-link>
-      <router-link to="/login" class="btn">
+      <router-link v-if="$store.state.login" to="/usuario" class="btn">
+        {{ nome }}
+      </router-link>
+      <router-link v-else to="/login" class="btn">
         Vender / Login
       </router-link>
     </nav>
@@ -13,8 +16,12 @@
 
 <script>
 export default {
-  name: "TheFooter"
-
+  name: "TheFooter",
+  computed: {
+    nome() {
+      return this.$store.state.usuario.nome.replace(/ .*/, "");
+    }
+  }
 }
 </script>
 
