@@ -32,9 +32,14 @@ export default {
     }
   },
   methods: {
-    logar() {
-      this.$store.dispatch("getUsuario", this.login.email);
-      this.$router.push({name: "usuario"});
+    async logar() {
+      this.$store.dispatch("logarUsuario", this.login);
+      try {
+       await this.$store.dispatch("getUsuario");
+       await this.$router.push({name: "usuario"}); 
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 }
