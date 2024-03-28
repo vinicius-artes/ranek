@@ -46,12 +46,10 @@ export default {
   methods: {
     getProdutos() {
       this.produtos = null;
-      window.setTimeout(() => {
         api.get(this.url).then(response => {
         this.produtosTotal = Number(response.headers["x-total-count"]);
         this.produtos = response.data;
       });
-      }, 1500)
     }
   },
   watch: {
@@ -75,6 +73,13 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin: 30px;
+}
+@media (max-width: 500px) {
+  .produtos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 10px;
+  }
 }
 .produto {
   box-shadow: 0 4px 8px rgba(30, 60, 90, 0.1);

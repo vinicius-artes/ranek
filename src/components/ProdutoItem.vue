@@ -26,6 +26,12 @@ export default {
   margin-bottom: 40px;
   position: relative;
 }
+@media (max-width: 500px) {
+  .produto {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
 .info {
   align-self: end;
 }

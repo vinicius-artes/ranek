@@ -18,6 +18,7 @@
         </div>
       </div>
     </div>
+    <PaginaCarregando v-else />
   </section>
 </template>
 
@@ -76,5 +77,11 @@ h2 {
 h3 {
   margin: 0px;
   justify-self: end;
+}
+@media (max-width: 500px) {
+  .entrega {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 }
 </style>
