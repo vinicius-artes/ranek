@@ -40,7 +40,7 @@ export default {
     getProduto() {
       api.get(`/produto/${this.id}`).then(response => {
         this.produto = response.data;
-        console.log(this.produto)
+        document.title = this.produto.nome;
       });
     }
   },

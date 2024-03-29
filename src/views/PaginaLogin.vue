@@ -43,6 +43,9 @@ export default {
         this.erros.push(error.response.data.message)
       });
     }
+  },
+  created() {
+    document.title = "Login";
   }
 }
 </script>
